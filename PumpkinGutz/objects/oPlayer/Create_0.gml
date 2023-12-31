@@ -134,3 +134,6 @@ isRespawning = false;
 //	isRespawning = true;
 //	respawnTimer = respawnInterval;
 //}
+
+tilemap = layer_tilemap_get_id("Tiles");
+bounds = { top : bbox_top, midY : bbox_top + halfHeight, midX : bbox_left + halfWidth, bottom : bbox_bottom, left : bbox_left, right : bbox_right };
