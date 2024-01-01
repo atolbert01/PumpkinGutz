@@ -17,9 +17,11 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings": [
+    {"name":"sWall","order":2,"path":"sprites/sWall/sWall.yy",},
     {"name":"tile_operations","order":1,"path":"scripts/tile_operations/tile_operations.yy",},
     {"name":"sTiles_Test","order":1,"path":"sprites/sTiles_Test/sTiles_Test.yy",},
     {"name":"oCamera","order":1,"path":"objects/oCamera/oCamera.yy",},
+    {"name":"oWall","order":3,"path":"objects/oWall/oWall.yy",},
     {"name":"oGameManager","order":2,"path":"objects/oGameManager/oGameManager.yy",},
   ],
 }
