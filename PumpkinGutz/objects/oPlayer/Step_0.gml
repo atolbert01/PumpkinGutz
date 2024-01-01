@@ -27,7 +27,7 @@ if (isRespawning)
 var f1 = keyboard_check_pressed(vk_f1);
 var f2 = keyboard_check_pressed(vk_f2);
 
-if (f1) oGameManager.playSound = !oGameManager.playSound;
+//if (f1) oRoomManager.playSound = !oRoomManager.playSound;
 
 
 var gpAim = !disableInput && (gamepad_button_check(0, gp_shoulderr) || gamepad_button_check(0, gp_shoulderl));
