@@ -21,6 +21,8 @@
     {"name":"tile_operations","order":1,"path":"scripts/tile_operations/tile_operations.yy",},
     {"name":"sTiles_Test","order":1,"path":"sprites/sTiles_Test/sTiles_Test.yy",},
     {"name":"oCamera","order":1,"path":"objects/oCamera/oCamera.yy",},
+    {"name":"oRegion","order":4,"path":"objects/oRegion/oRegion.yy",},
+    {"name":"sRegion","order":3,"path":"sprites/sRegion/sRegion.yy",},
     {"name":"enums","order":2,"path":"scripts/enums/enums.yy",},
     {"name":"oWall","order":3,"path":"objects/oWall/oWall.yy",},
     {"name":"oRoomManager","order":2,"path":"objects/oRoomManager/oRoomManager.yy",},

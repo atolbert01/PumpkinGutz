@@ -198,13 +198,9 @@ else
 }
 
 // Horizontal Collisions
-//if (tilemap_get_at_pixel(tilemap, x + hsp, y) > 0)
-//if (horizontal_collision(tilemap, bounds, hsp))
 if (place_meeting(x + hsp, y, oWall))
 {
 	var i = abs(hsp);
-	//while (!tilemap_get_at_pixel(tilemap, x + sign(hsp), y) < 1 && i > 0)
-	//while (!horizontal_collision(tilemap, bounds, sign(hsp)) && i > 0)
 	while (!place_meeting(x + sign(hsp), y, oWall) && i > 0)
 	{
 		x += sign(hsp);
@@ -213,16 +209,11 @@ if (place_meeting(x + hsp, y, oWall))
 	hsp = 0;
 }
 x += hsp;
-bounds = { top : bbox_top, midY : bbox_top + halfHeight, midX : bbox_left + halfWidth, bottom : bbox_bottom, left : bbox_left, right : bbox_right };
 
 // Vertical Collisions
-//if (tilemap_get_at_pixel(tilemap, x, y + vsp) > 0)
-//if (vertical_collision(tilemap, bounds, vsp))
 if (place_meeting(x, y + vsp, oWall))
 {
 	var i = abs(vsp);
-	//while (tilemap_get_at_pixel(tilemap, x, y + sign(vsp)) < 1 && i > 0)
-	//while (!vertical_collision(tilemap, bounds, sign(vsp)) && i > 0)
 	while (!place_meeting(x, y + sign(vsp), oWall) && i > 0)
 	{
 		y += sign(vsp);
@@ -231,10 +222,8 @@ if (place_meeting(x, y + vsp, oWall))
 	vsp = 0;
 }
 y += vsp;
-bounds = { top : bbox_top, midY : bbox_top + halfHeight, midX : bbox_left + halfWidth, bottom : bbox_bottom, left : bbox_left, right : bbox_right };
+
 // Am I on the ground?
-//if (tilemap_get_at_pixel(tilemap, x, y + 1) > 0)
-//if (vertical_collision(tilemap, bounds, 1))
 if (place_meeting(x, y + 1, oWall)) 
 {
 	canJump = 5;
@@ -325,7 +314,7 @@ if (camZoom > 1)
 }
 
 
-if (roomBounds != noone)
+if (currentRegion != noone)
 {	
 	var lerpHeight = lerp(viewHeight, camZoom * oCamera.camHeight, camZoomFactor);
 	var newHeight = clamp(lerpHeight, 0, room_height);
@@ -335,8 +324,8 @@ if (roomBounds != noone)
 	var offsetX = adjCamX - (newWidth - viewWidth) * 0.5;
 	var offsetY = adjCamY - (newHeight - viewHeight) * 0.5;
 	
-	adjCamX = clamp(offsetX, roomBounds.x, (roomBounds.x + roomBounds.width) - newWidth);
-	adjCamY = clamp(offsetY, roomBounds.y, (roomBounds.y + roomBounds.height) - newHeight);
+	adjCamX = clamp(offsetX, currentRegion.x, (currentRegion.x + currentRegion.width) - newWidth);
+	adjCamY = clamp(offsetY, currentRegion.y, (currentRegion.y + currentRegion.height) - newHeight);
 }
 else
 {

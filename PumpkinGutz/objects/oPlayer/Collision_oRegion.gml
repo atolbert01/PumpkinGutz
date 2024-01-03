@@ -1,0 +1,1 @@
+if (other != currentRegion) currentRegion = other;
