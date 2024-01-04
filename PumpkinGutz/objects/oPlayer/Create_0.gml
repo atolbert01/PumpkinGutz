@@ -136,3 +136,5 @@ currentRegion = instance_place(x, y, oRegion);
 //	isRespawning = true;
 //	respawnTimer = respawnInterval;
 //}
+
+head = instance_create_depth(x, bbox_top, -10, oHead);

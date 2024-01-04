@@ -1,10 +1,8 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oRegion",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-  ],
+  "name": "oHead",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
@@ -28,9 +26,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "sRegion",
-    "path": "sprites/sRegion/sRegion.yy",
+    "name": "sHead_Pumpkin",
+    "path": "sprites/sHead_Pumpkin/sHead_Pumpkin.yy",
   },
   "spriteMaskId": null,
-  "visible": false,
+  "visible": true,
 }

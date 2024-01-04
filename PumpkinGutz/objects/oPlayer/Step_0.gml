@@ -204,11 +204,13 @@ if (place_meeting(x + hsp, y, oWall))
 	while (!place_meeting(x + sign(hsp), y, oWall) && i > 0)
 	{
 		x += sign(hsp);
+		//head.x += sign(hsp);
 		i--;
 	}
 	hsp = 0;
 }
 x += hsp;
+//head.x += hsp;
 
 // Vertical Collisions
 if (place_meeting(x, y + vsp, oWall))
@@ -217,11 +219,13 @@ if (place_meeting(x, y + vsp, oWall))
 	while (!place_meeting(x, y + sign(vsp), oWall) && i > 0)
 	{
 		y += sign(vsp);
+		//head.y += sign(vsp);
 		i--;
 	}
 	vsp = 0;
 }
 y += vsp;
+//head.y += vsp;
 
 // Am I on the ground?
 if (place_meeting(x, y + 1, oWall)) 
@@ -230,6 +234,21 @@ if (place_meeting(x, y + 1, oWall))
 	grounded = true;
 	if (keyJump || (keyJumpHeld && jumpHoldTimer < 10)) vsp = jumpForce;
 }
+
+
+
+
+
+
+
+if (instance_exists(oHead))
+{
+	var targetX = x;
+	var targetY = bbox_top;
+	head.x = lerp(head.x, targetX, 0.67);
+	head.y = lerp(head.y, targetY, 0.5);
+}
+
 
 // Check if we got hit
 //is_hit();
@@ -247,6 +266,7 @@ if (grounded)
 	{
 		//sprite_index = sPlayerRun;
 		image_xscale = sign(hsp);
+		head.image_xscale = image_xscale;
 	}
 	else
 	{
